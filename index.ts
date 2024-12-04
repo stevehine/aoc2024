@@ -3,6 +3,7 @@ import * as fs from "fs";
 import { LocationList } from "./library/location-list";
 import { ReactorReports } from "./library/reactor-reports";
 import { MemoryMultiplier } from "./library/memory-multiplier";
+import { WordSearch } from "./library/word-search";
 
 const input: string[] = [];
 
@@ -40,6 +41,13 @@ readline
           console.log(`Total from all the muls ${memoryMultiplier.TotalResult}`);
           console.log(`Total from all the conditional muls ${memoryMultiplier.TotalResultWithConditionals}`);
         }
+        break;
+      case "day4": {
+        const wordSearch = new WordSearch(input);
+        console.log(`There are ${wordSearch.XMASOccurances} occurances of XMAS`);
+        console.log(`There are ${wordSearch.CrossMASOccurances} occurances of CrossMAS`);
+      }
+        break;
       default:
         console.log("You need to tell me which day to run");
     }
