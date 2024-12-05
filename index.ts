@@ -4,6 +4,7 @@ import { LocationList } from "./library/location-list";
 import { ReactorReports } from "./library/reactor-reports";
 import { MemoryMultiplier } from "./library/memory-multiplier";
 import { WordSearch } from "./library/word-search";
+import { PrintQueue } from "./library/print-queue";
 
 const input: string[] = [];
 
@@ -46,6 +47,11 @@ readline
         const wordSearch = new WordSearch(input);
         console.log(`There are ${wordSearch.XMASOccurances} occurances of XMAS`);
         console.log(`There are ${wordSearch.CrossMASOccurances} occurances of CrossMAS`);
+      }
+        break;
+      case "day5": {
+        const printQueue = new PrintQueue(input);
+        console.log(`The sum of the middle pages is ${printQueue.SumOfMiddlePages}`);
       }
         break;
       default:
