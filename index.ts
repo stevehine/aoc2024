@@ -52,6 +52,7 @@ readline
       case "day5": {
         const printQueue = new PrintQueue(input);
         console.log(`The sum of the middle pages is ${printQueue.SumOfMiddlePages}`);
+        console.log(`The sum of the corrected middle pages is ${printQueue.SumOfCorrectedMiddlePages}`);
       }
         break;
       default:

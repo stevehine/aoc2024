@@ -33,5 +33,6 @@ describe("Some tests about print queues", () => {
 
         const printQueue = new PrintQueue(testData);
         expect(printQueue.SumOfMiddlePages).toBe(143);
+        expect(printQueue.SumOfCorrectedMiddlePages).toBe(123);
     })
 })
