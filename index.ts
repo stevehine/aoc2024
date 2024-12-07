@@ -6,6 +6,7 @@ import { MemoryMultiplier } from "./library/memory-multiplier";
 import { WordSearch } from "./library/word-search";
 import { PrintQueue } from "./library/print-queue";
 import { GuardedLab } from "./library/guarded-lab";
+import { CalibrationOperators } from "./library/calibration-operators";
 
 const input: string[] = [];
 
@@ -81,6 +82,16 @@ readline
         );
         console.log(
           `There are ${guardedLab.PotentialParadoxes} potential locations to cause a paradox`,
+        );
+        break;
+      }
+      case "day7": {
+        const calibrationOperators = new CalibrationOperators(input);
+        console.log(
+          `The sum of the possible totals is ${calibrationOperators.TotalOfValidCalculations}`,
+        );
+        console.log(
+          `The sum of the possible totals with concat is ${calibrationOperators.TotalOfValidCalculationsIncludingConcat}`,
         );
         break;
       }
