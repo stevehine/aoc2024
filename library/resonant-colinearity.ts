@@ -42,10 +42,8 @@ export class ResonantColinearity {
 
             const normalisedSeparation = separation.normalise();
             let oneWay = subAntenna;
-            let orTheOther = subAntenna;
-            while (this.inBounds(oneWay) || this.inBounds(orTheOther)) {
+            while (this.inBounds(oneWay)) {
               oneWay = oneWay.sub(normalisedSeparation);
-              orTheOther = orTheOther.sub(normalisedSeparation);
               if (
                 this.inBounds(oneWay) &&
                 !alignedNodeLocations.find(
@@ -54,14 +52,6 @@ export class ResonantColinearity {
                 )
               )
                 alignedNodeLocations.push(oneWay);
-              if (
-                this.inBounds(orTheOther) &&
-                !alignedNodeLocations.find(
-                  (location) =>
-                    location.X === orTheOther.X && location.Y === orTheOther.Y,
-                )
-              )
-                alignedNodeLocations.push(orTheOther);
             }
           });
       });
