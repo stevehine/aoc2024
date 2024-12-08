@@ -1,3 +1,5 @@
+import { XY } from "./shared/xy";
+
 export class GuardedLab {
   private readonly _visited: XY[] = [];
   private readonly _potentialParadoxes: number;
@@ -81,23 +83,5 @@ export class GuardedLab {
   }
   public get PotentialParadoxes() {
     return this._potentialParadoxes;
-  }
-}
-
-class XY {
-  public X: number;
-  public Y: number;
-
-  constructor(x: number, y: number) {
-    this.X = x;
-    this.Y = y;
-  }
-
-  public add(second: XY) {
-    return new XY(this.X + second.X, this.Y + second.Y);
-  }
-
-  public toString() {
-    return `${this.X},${this.Y}`;
   }
 }

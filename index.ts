@@ -7,6 +7,7 @@ import { WordSearch } from "./library/word-search";
 import { PrintQueue } from "./library/print-queue";
 import { GuardedLab } from "./library/guarded-lab";
 import { CalibrationOperators } from "./library/calibration-operators";
+import { ResonantColinearity } from "./library/resonant-colinearity";
 
 const input: string[] = [];
 
@@ -95,6 +96,17 @@ readline
         );
         break;
       }
+      case "day8":
+        {
+          const resonantColinearity = new ResonantColinearity(input);
+          console.log(
+            `There are ${resonantColinearity.UniqueAntiNodeLocations} unique nodes`,
+          );
+          console.log(
+            `There are ${resonantColinearity.AlignedAntiNodeLocations} aligned unique nodes`,
+          );
+        }
+        break;
       default:
         console.log("You need to tell me which day to run");
     }

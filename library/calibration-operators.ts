@@ -1,6 +1,6 @@
 export class CalibrationOperators {
   private readonly _totalOfValidCalculations: number;
-  private _totalOfValidCalculationsWithConcatination: number;
+  private readonly _totalOfValidCalculationsWithConcatination: number;
 
   constructor(data: string[]) {
     const dataSet = data
