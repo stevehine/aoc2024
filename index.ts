@@ -8,6 +8,7 @@ import { PrintQueue } from "./library/print-queue";
 import { GuardedLab } from "./library/guarded-lab";
 import { CalibrationOperators } from "./library/calibration-operators";
 import { ResonantColinearity } from "./library/resonant-colinearity";
+import { DiskDefragmenter } from "./library/disk-defragmenter";
 
 const input: string[] = [];
 
@@ -107,6 +108,16 @@ readline
           );
         }
         break;
+      case "day9": {
+        const diskDefragmenter = new DiskDefragmenter(input[0]);
+        console.log(
+          `The checksum of the disk is ${diskDefragmenter.CheckSum}`
+        )
+        console.log(
+          `The checksum of the disk is ${diskDefragmenter.CheckSumWholeFiles} when considering whole files`
+        )
+        break;
+      }
       default:
         console.log("You need to tell me which day to run");
     }
