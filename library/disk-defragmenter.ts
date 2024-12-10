@@ -47,7 +47,6 @@ export class DiskDefragmenter {
                 }
                 if (space >= file.size) {
 
-                    spaces.set(file.index, file.size);
                     file.index = index;
 
                     spaces.delete(index);
