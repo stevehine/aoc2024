@@ -9,6 +9,7 @@ import { GuardedLab } from "./library/guarded-lab";
 import { CalibrationOperators } from "./library/calibration-operators";
 import { ResonantColinearity } from "./library/resonant-colinearity";
 import { DiskDefragmenter } from "./library/disk-defragmenter";
+import { TopographicMap } from "./library/topographic-map";
 
 const input: string[] = [];
 
@@ -118,6 +119,12 @@ readline
         )
         break;
       }
+      case "day10": {
+        const topographicMap = new TopographicMap(input);
+        console.log(`The score of the trailheads is ${topographicMap.SumOfTrailheads}`);
+        console.log(`The number of unique trails is ${topographicMap.SumOfUniqueTrailsByTrailheads}`);
+      }
+        break;
       default:
         console.log("You need to tell me which day to run");
     }
