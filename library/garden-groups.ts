@@ -31,14 +31,12 @@ export class GardenGroups {
 
     public get PriceOfFence() {
         return this._gardenGroups.filter(group => group.locations.length > 0).map(group => {
-
             return group.locations.length * this.calculateFenceLength(group)
         }).reduce((p, c) => p + c);
     }
 
     public get PriceOfDiscountFence() {
         return this._gardenGroups.filter(group => group.locations.length > 0).map(group => {
-            console.log(group.groupCode, group.locations.length);
             return group.locations.length * this.calculateFenceSides(group)
         }).reduce((p, c) => p + c);
     }
