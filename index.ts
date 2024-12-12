@@ -10,6 +10,7 @@ import { CalibrationOperators } from "./library/calibration-operators";
 import { ResonantColinearity } from "./library/resonant-colinearity";
 import { DiskDefragmenter } from "./library/disk-defragmenter";
 import { TopographicMap } from "./library/topographic-map";
+import { GardenGroups } from "./library/garden-groups";
 
 const input: string[] = [];
 
@@ -123,6 +124,12 @@ readline
         const topographicMap = new TopographicMap(input);
         console.log(`The score of the trailheads is ${topographicMap.SumOfTrailheads}`);
         console.log(`The number of unique trails is ${topographicMap.SumOfUniqueTrailsByTrailheads}`);
+      }
+        break;
+      case "day12": {
+        const gardenGroups = new GardenGroups(input);
+        console.log(`The fence will cost ${gardenGroups.PriceOfFence}`);
+        console.log(`The discount fence will cost ${gardenGroups.PriceOfDiscountFence}`);
       }
         break;
       default:
