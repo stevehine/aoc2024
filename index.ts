@@ -10,6 +10,7 @@ import { CalibrationOperators } from "./library/calibration-operators";
 import { ResonantColinearity } from "./library/resonant-colinearity";
 import { DiskDefragmenter } from "./library/disk-defragmenter";
 import { TopographicMap } from "./library/topographic-map";
+import { PlutoniumPebbles } from "./library/plutonium-pebbles";
 import { GardenGroups } from "./library/garden-groups";
 
 const input: string[] = [];
@@ -124,6 +125,14 @@ readline
         const topographicMap = new TopographicMap(input);
         console.log(`The score of the trailheads is ${topographicMap.SumOfTrailheads}`);
         console.log(`The number of unique trails is ${topographicMap.SumOfUniqueTrailsByTrailheads}`);
+      }
+        break;
+      case "day11": {
+        const plutoniumPebbles = new PlutoniumPebbles(input[0]);
+        plutoniumPebbles.blink(25);
+        console.log(`After 25 blinks there are ${plutoniumPebbles.StoneCount} pebbles`);
+        plutoniumPebbles.blink(50);
+        console.log(`After 75 blinks there are ${plutoniumPebbles.StoneCount} pebbles`);
       }
         break;
       case "day12": {
