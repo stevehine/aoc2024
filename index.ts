@@ -12,6 +12,7 @@ import { DiskDefragmenter } from "./library/disk-defragmenter";
 import { TopographicMap } from "./library/topographic-map";
 import { PlutoniumPebbles } from "./library/plutonium-pebbles";
 import { GardenGroups } from "./library/garden-groups";
+import { Arcade } from "./library/arcade";
 
 const input: string[] = [];
 
@@ -140,6 +141,12 @@ readline
         console.log(`The fence will cost ${gardenGroups.PriceOfFence}`);
         console.log(`The discount fence will cost ${gardenGroups.PriceOfDiscountFence}`);
       }
+        break;
+      case "day13": {
+        const arcade = new Arcade(input);
+        console.log(`The lowest cost of the arcade is ${arcade.TokenCount}`)
+        console.log(`The lowest cost of the longrange arcade is ${arcade.TokenCountLongRange}`)
+      };
         break;
       default:
         console.log("You need to tell me which day to run");
