@@ -13,6 +13,7 @@ import { TopographicMap } from "./library/topographic-map";
 import { PlutoniumPebbles } from "./library/plutonium-pebbles";
 import { GardenGroups } from "./library/garden-groups";
 import { Arcade } from "./library/arcade";
+import { RestroomRobots } from "./library/restroom-robots";
 
 const input: string[] = [];
 
@@ -147,6 +148,14 @@ readline
         console.log(`The lowest cost of the arcade is ${arcade.TokenCount}`)
         console.log(`The lowest cost of the longrange arcade is ${arcade.TokenCountLongRange}`)
       };
+        break;
+      case "day14": {
+        let restroomRobots = new RestroomRobots(input, 101, 103);
+        restroomRobots.MoveRobots(100);
+        console.log(`The safety factor after 100 seconds is ${restroomRobots.SafetyFactor}`);
+        restroomRobots = new RestroomRobots(input, 101, 103);
+        restroomRobots.SearchForTree(50000);
+      }
         break;
       default:
         console.log("You need to tell me which day to run");
