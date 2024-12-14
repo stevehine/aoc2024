@@ -58,13 +58,17 @@ export class RestroomRobots {
                 for (let y = 0; y < this._size.Y; y++) {
                     let line = "";
                     for (let x = 0; x < this._size.Y; x++) {
-                        if (this._robots.find(robot => robot.pos.X === x && robot.pos.Y === y))
+                        if (x === avgPos.X && y === avgPos.Y)
+                            line += "."
+                        else if (this._robots.find(robot => robot.pos.X === x && robot.pos.Y === y))
                             line += "#";
                         else
-                            line += ".";
+                            line += " ";
                     }
                     console.log(line);
                 }
+
+                return;
             }
             i++;
             if (i > maxIterations)
