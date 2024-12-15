@@ -1,3 +1,4 @@
+import { timeStamp } from "console";
 import { XY, XYFromString } from "./shared/xy"
 
 export class RestroomRobots {
@@ -41,6 +42,8 @@ export class RestroomRobots {
         let i = 1;
 
         const robotCount = this._robots.length;
+
+        timeStamp();
 
         while (true) {
             //console.log(`Searching frame ${i}`);

@@ -31,6 +31,10 @@ export class XY {
     return new XY(((this.X % mod.X) + mod.X) % mod.X, ((this.Y % mod.Y) + mod.Y) % mod.Y);
   }
 
+  public equals(that: XY): boolean {
+    return this.X === that.X && this.Y === that.Y;
+  }
+
   public toString() {
     return `${this.X},${this.Y}`;
   }

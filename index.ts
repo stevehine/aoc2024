@@ -14,6 +14,7 @@ import { PlutoniumPebbles } from "./library/plutonium-pebbles";
 import { GardenGroups } from "./library/garden-groups";
 import { Arcade } from "./library/arcade";
 import { RestroomRobots } from "./library/restroom-robots";
+import { Warehouse } from "./library/warehouse";
 
 const input: string[] = [];
 
@@ -155,6 +156,12 @@ readline
         console.log(`The safety factor after 100 seconds is ${restroomRobots.SafetyFactor}`);
         restroomRobots = new RestroomRobots(input, 101, 103);
         restroomRobots.SearchForTree(50000);
+      }
+        break;
+      case "day15": {
+        const warehouse = new Warehouse(input);
+        console.log(`The GPS Score is ${warehouse.GPSTotal}`);
+        console.log(`The Big GPS Score is ${warehouse.BigGPSTotal}`);
       }
         break;
       default:
