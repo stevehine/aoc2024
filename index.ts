@@ -15,6 +15,7 @@ import { GardenGroups } from "./library/garden-groups";
 import { Arcade } from "./library/arcade";
 import { RestroomRobots } from "./library/restroom-robots";
 import { Warehouse } from "./library/warehouse";
+import { ReindeerMaze } from "./library/reindeer-maze";
 
 const input: string[] = [];
 
@@ -162,6 +163,12 @@ readline
         const warehouse = new Warehouse(input);
         console.log(`The GPS Score is ${warehouse.GPSTotal}`);
         console.log(`The Big GPS Score is ${warehouse.BigGPSTotal}`);
+      }
+        break;
+      case "day16": {
+        const reindeerMaze = new ReindeerMaze(input);
+        console.log(`The best score is ${reindeerMaze.BestScore}`);
+        console.log(`The unique square count is ${reindeerMaze.UniqueSquares}`);
       }
         break;
       default:

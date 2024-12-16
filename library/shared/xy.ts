@@ -38,6 +38,31 @@ export class XY {
   public toString() {
     return `${this.X},${this.Y}`;
   }
+
+  public left() {
+    if (this.equals(XY.North))
+      return XY.West;
+    if (this.equals(XY.West))
+      return XY.South;
+    if (this.equals(XY.South))
+      return XY.East;
+    return XY.North;
+  }
+
+  public right() {
+    if (this.equals(XY.North))
+      return XY.East;
+    if (this.equals(XY.West))
+      return XY.North;
+    if (this.equals(XY.South))
+      return XY.West;
+    return XY.South;
+  }
+
+  public static get North() { return new XY(0, -1); }
+  public static get East() { return new XY(1, 0); }
+  public static get South() { return new XY(0, 1); }
+  public static get West() { return new XY(-1, 0); }
 }
 
 export function XYFromString(value: string) {
