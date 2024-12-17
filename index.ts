@@ -16,6 +16,7 @@ import { Arcade } from "./library/arcade";
 import { RestroomRobots } from "./library/restroom-robots";
 import { Warehouse } from "./library/warehouse";
 import { ReindeerMaze } from "./library/reindeer-maze";
+import { ChronospatialComputer } from "./library/chronospatial-computer";
 
 const input: string[] = [];
 
@@ -117,59 +118,117 @@ readline
         break;
       case "day9": {
         const diskDefragmenter = new DiskDefragmenter(input[0]);
+        console.log(`The checksum of the disk is ${diskDefragmenter.CheckSum}`);
         console.log(
-          `The checksum of the disk is ${diskDefragmenter.CheckSum}`
-        )
-        console.log(
-          `The checksum of the disk is ${diskDefragmenter.CheckSumWholeFiles} when considering whole files`
-        )
+          `The checksum of the disk is ${diskDefragmenter.CheckSumWholeFiles} when considering whole files`,
+        );
         break;
       }
-      case "day10": {
-        const topographicMap = new TopographicMap(input);
-        console.log(`The score of the trailheads is ${topographicMap.SumOfTrailheads}`);
-        console.log(`The number of unique trails is ${topographicMap.SumOfUniqueTrailsByTrailheads}`);
-      }
+      case "day10":
+        {
+          const topographicMap = new TopographicMap(input);
+          console.log(
+            `The score of the trailheads is ${topographicMap.SumOfTrailheads}`,
+          );
+          console.log(
+            `The number of unique trails is ${topographicMap.SumOfUniqueTrailsByTrailheads}`,
+          );
+        }
         break;
-      case "day11": {
-        const plutoniumPebbles = new PlutoniumPebbles(input[0]);
-        plutoniumPebbles.blink(25);
-        console.log(`After 25 blinks there are ${plutoniumPebbles.StoneCount} pebbles`);
-        plutoniumPebbles.blink(50);
-        console.log(`After 75 blinks there are ${plutoniumPebbles.StoneCount} pebbles`);
-      }
+      case "day11":
+        {
+          const plutoniumPebbles = new PlutoniumPebbles(input[0]);
+          plutoniumPebbles.blink(25);
+          console.log(
+            `After 25 blinks there are ${plutoniumPebbles.StoneCount} pebbles`,
+          );
+          plutoniumPebbles.blink(50);
+          console.log(
+            `After 75 blinks there are ${plutoniumPebbles.StoneCount} pebbles`,
+          );
+        }
         break;
-      case "day12": {
-        const gardenGroups = new GardenGroups(input);
-        console.log(`The fence will cost ${gardenGroups.PriceOfFence}`);
-        console.log(`The discount fence will cost ${gardenGroups.PriceOfDiscountFence}`);
-      }
+      case "day12":
+        {
+          const gardenGroups = new GardenGroups(input);
+          console.log(`The fence will cost ${gardenGroups.PriceOfFence}`);
+          console.log(
+            `The discount fence will cost ${gardenGroups.PriceOfDiscountFence}`,
+          );
+        }
         break;
-      case "day13": {
-        const arcade = new Arcade(input);
-        console.log(`The lowest cost of the arcade is ${arcade.TokenCount}`)
-        console.log(`The lowest cost of the longrange arcade is ${arcade.TokenCountLongRange}`)
-      };
+      case "day13":
+        {
+          const arcade = new Arcade(input);
+          console.log(`The lowest cost of the arcade is ${arcade.TokenCount}`);
+          console.log(
+            `The lowest cost of the longrange arcade is ${arcade.TokenCountLongRange}`,
+          );
+        }
         break;
-      case "day14": {
-        let restroomRobots = new RestroomRobots(input, 101, 103);
-        restroomRobots.MoveRobots(100);
-        console.log(`The safety factor after 100 seconds is ${restroomRobots.SafetyFactor}`);
-        restroomRobots = new RestroomRobots(input, 101, 103);
-        restroomRobots.SearchForTree(50000);
-      }
+      case "day14":
+        {
+          let restroomRobots = new RestroomRobots(input, 101, 103);
+          restroomRobots.MoveRobots(100);
+          console.log(
+            `The safety factor after 100 seconds is ${restroomRobots.SafetyFactor}`,
+          );
+          restroomRobots = new RestroomRobots(input, 101, 103);
+          restroomRobots.SearchForTree(50000);
+        }
         break;
-      case "day15": {
-        const warehouse = new Warehouse(input);
-        console.log(`The GPS Score is ${warehouse.GPSTotal}`);
-        console.log(`The Big GPS Score is ${warehouse.BigGPSTotal}`);
-      }
+      case "day15":
+        {
+          const warehouse = new Warehouse(input);
+          console.log(`The GPS Score is ${warehouse.GPSTotal}`);
+          console.log(`The Big GPS Score is ${warehouse.BigGPSTotal}`);
+        }
         break;
-      case "day16": {
-        const reindeerMaze = new ReindeerMaze(input);
-        console.log(`The best score is ${reindeerMaze.BestScore}`);
-        console.log(`The unique square count is ${reindeerMaze.UniqueSquares}`);
-      }
+      case "day16":
+        {
+          const reindeerMaze = new ReindeerMaze(input);
+          console.log(`The best score is ${reindeerMaze.BestScore}`);
+          console.log(
+            `The unique square count is ${reindeerMaze.UniqueSquares}`,
+          );
+        }
+        break;
+      case "day17":
+        {
+          const chronospatialComputer = new ChronospatialComputer(input);
+          const initialMemory = chronospatialComputer.Memory.split(",");
+          chronospatialComputer.runToCompletion();
+          console.log(
+            `The output buffer is ${chronospatialComputer.OutputBuffer}`,
+          );
+
+          const testValue = "1000000000000000"
+            .split("")
+            .map((val) => parseInt(val));
+          const len = testValue.length;
+          let i;
+          let bestIndex = 1;
+          do {
+            i = parseInt(testValue.join(""), 8);
+            const chronospatialComputer = new ChronospatialComputer(input);
+            chronospatialComputer.hackA(i);
+            chronospatialComputer.runToCompletion();
+            const finalOutput = chronospatialComputer.OutputBuffer.split(",");
+            console.log(initialMemory.join(","));
+            console.log(finalOutput.join(","));
+            if (initialMemory[len - bestIndex] === finalOutput[len - bestIndex])
+              bestIndex++;
+            else {
+              testValue[bestIndex - 1]++;
+              while (testValue[bestIndex - 1] === 8) {
+                testValue[bestIndex - 1] = 0;
+                bestIndex--;
+                testValue[bestIndex - 1]++;
+              }
+            }
+          } while (bestIndex <= testValue.length);
+          console.log(`The magic value is ${i}`);
+        }
         break;
       default:
         console.log("You need to tell me which day to run");
