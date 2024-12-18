@@ -1,8 +1,8 @@
 import { XY } from "./shared/xy";
 
 export class Warehouse {
-    private _map: Thing[] = [];
-    private _bigMap: Thing[] = [];
+    private readonly _map: Thing[] = [];
+    private readonly _bigMap: Thing[] = [];
 
     constructor(data: string[]) {
         const map = data.filter(line => line.includes('#'));

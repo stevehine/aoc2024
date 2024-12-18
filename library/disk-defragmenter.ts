@@ -27,9 +27,7 @@ export class DiskDefragmenter {
             }
             isFile = !isFile
         })
-        //console.log(this._diskData);
-        //console.log(files);
-        //console.log(spaces);
+
         for (let i = 0; i < totalFileSize; i++) {
             if (this._diskData[i] === undefined) {
 

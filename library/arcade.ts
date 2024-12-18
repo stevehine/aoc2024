@@ -1,7 +1,7 @@
 import { XY } from "./shared/xy";
 
 export class Arcade {
-    private _clawMachines: ClawMachine[] = [];
+    private readonly _clawMachines: ClawMachine[] = [];
 
     constructor(data: string[]) {
         for (let i = 0; i < data.length; i += 4) {
@@ -24,9 +24,9 @@ export class Arcade {
 
 class ClawMachine {
 
-    private _a: XY;
-    private _b: XY;
-    private _prize: XY;
+    private readonly _a: XY;
+    private readonly _b: XY;
+    private readonly _prize: XY;
 
     public MinimumCost: number;
     public MinimumCostLongRange: number;

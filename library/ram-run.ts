@@ -2,18 +2,18 @@ import { XY } from "./shared/xy";
 
 export class RamRun {
 
-    private _byteShower: XY[];
-    private _size: number;
+    private readonly _byteShower: XY[];
+    private readonly _size: number;
     private _memorySpace: XY[] = [];
     private _shortestPath: number = 0;
-    private _anim: boolean;
+    private readonly _anim: boolean;
     constructor(data: string[], size: number, anim = false) {
         this._byteShower = data.map(item => item.split(',')).map(parts => new XY(parseInt(parts[0]), parseInt(parts[1])));
         this._size = size;
         this._anim = anim;
     }
 
-    public calculateShortestPath() {
+    public calculateShortestPath(): undefined {
         const queue: Move[] = [];
 
         const visited: XY[] = [];
