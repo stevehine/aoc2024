@@ -17,6 +17,7 @@ import { RestroomRobots } from "./library/restroom-robots";
 import { Warehouse } from "./library/warehouse";
 import { ReindeerMaze } from "./library/reindeer-maze";
 import { ChronospatialComputer } from "./library/chronospatial-computer";
+import { RamRun } from "./library/ram-run";
 
 const input: string[] = [];
 
@@ -230,6 +231,12 @@ readline
           console.log(`The magic value is ${i}`);
         }
         break;
+      case "day18": {
+        const ramRun = new RamRun(input, 71, true);
+        ramRun.dropBytes(1024);
+        ramRun.calculateShortestPath();
+        console.log(`The shortest path is ${ramRun.ShortestPath} blocks long`);
+      } break;
       default:
         console.log("You need to tell me which day to run");
     }
